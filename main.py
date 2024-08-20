@@ -10,7 +10,6 @@ def update_score():
 
 
 app = tkinter.Tk()
-
 app.title("My HamsterCombat")
 app.geometry("300x400")
 
