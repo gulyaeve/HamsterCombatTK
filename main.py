@@ -1,5 +1,5 @@
 import tkinter
-from PIL import ImageTk, Image
+from PIL import ImageTk, Image, ImageFilter
 
 scores = 0
 
@@ -25,7 +25,8 @@ scores_text.pack()
 
 hamster_image_base = Image.open("hamster.jpg")
 hamster_image_resized = hamster_image_base.resize((300, 300))
-hamster_image = ImageTk.PhotoImage(hamster_image_resized)
+hamster_image_filtered = hamster_image_resized.filter(ImageFilter.DETAIL)
+hamster_image = ImageTk.PhotoImage(hamster_image_filtered)
 image_label = tkinter.Label(app, image=hamster_image)
 image_label.pack()
 
