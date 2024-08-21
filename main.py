@@ -1,4 +1,5 @@
 import tkinter
+from PIL import ImageTk, Image
 
 scores = 0
 
@@ -21,6 +22,12 @@ button.pack()
 
 scores_text = tkinter.Label(app, text=scores)
 scores_text.pack()
+
+hamster_image_base = Image.open("hamster.jpg")
+hamster_image_resized = hamster_image_base.resize((300, 300))
+hamster_image = ImageTk.PhotoImage(hamster_image_resized)
+image_label = tkinter.Label(app, image=hamster_image)
+image_label.pack()
 
 
 if __name__ == '__main__':
